@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Create remove button
       const removeBtn = document.createElement("button");
       removeBtn.textContent = "Remove";
-      removeBtn.className = "remove-btn";
+      removeBtn.classList.add("remove-btn"); 
   
       // Add click event to remove button
       removeBtn.onclick = () => {
@@ -43,17 +43,14 @@ document.addEventListener("DOMContentLoaded", () => {
       taskInput.value = "";
     }
   
-    // Event listener for Add Task button click
-    addButton.addEventListener("click", addTask);
-  
-    // Event listener for Enter key press inside input field
-    taskInput.addEventListener("keypress", (event) => {
-      if (event.key === "Enter") {
-        addTask();
-      }
-    });
-  
-    // Optional: Call addTask once when page loads (can preload tasks here if needed)
-    // addTask();
+   // ✅ Event listener for button click
+  addButton.addEventListener("click", addTask);
+
+  // ✅ Event listener for pressing Enter
+  taskInput.addEventListener("keypress", function (event) {
+    if (event.key === "Enter") {
+      addTask();
+    }
+});
+    
   });
-  
